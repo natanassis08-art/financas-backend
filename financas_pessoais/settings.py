@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'sua-chave-secreta-local-para-desenvol
 DEBUG = 'RENDER' not in os.environ
 
 # financas_pessoais/settings.py
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['financas-backend-9d6n.onrender.com']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -157,6 +157,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # se comunique com sua API Django.
 # ----------------------------------------------------
 CORS_ALLOWED_ORIGINS = [
+    "https://financas-frontend.onrender.com",
     "http://localhost:5173",  # Porta padrão do Vite para desenvolvimento
     "http://127.0.0.1:5173",  # Alternativa para localhost
     # Se você for rodar o frontend em outro domínio/porta futuramente, adicione aqui:
