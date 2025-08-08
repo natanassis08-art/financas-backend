@@ -170,10 +170,11 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
-# financas_pessoais/settings.py
+# Configurações de Arquivos Estáticos (VERSÃO CORRIGIDA)
 STATIC_URL = '/static/'
 
-# Isso é necessário apenas em produção (quando DEBUG=False)
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Define o local para onde o `collectstatic` irá copiar todos os arquivos estáticos.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Habilita o armazenamento otimizado do WhiteNoise para servir os arquivos.
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
